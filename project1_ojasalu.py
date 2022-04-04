@@ -127,11 +127,7 @@ class Process(threading.Thread):
         if message['type'] == 'reply':
             if DEBUG:
                 print(f'DEBUG: {self.id} deleting from request queue: {message["id"]}')
-            try:
-                self.request_queue.remove(message['id'])
-            except Exception as e:
-                print(e)
-                exit()
+            self.request_queue.remove(message['id'])
 
 
 def list(threads):
