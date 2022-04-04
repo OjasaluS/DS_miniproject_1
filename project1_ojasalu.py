@@ -23,8 +23,8 @@ class Process(threading.Thread):
         self.id = id
         self.state = 0
         self.timestamp = None
-        self.cstime = [3, 5]
-        self.ptime = [15, 25]
+        self.cstime = [10, 10]
+        self.ptime = [5, 5]
         # Keep IDs of processes we are waiting an answer from and waiting to answer
         self.request_queue = []
         self.reply_queue = []
@@ -80,6 +80,7 @@ class Process(threading.Thread):
                 sleep_time = random.randint(self.cstime[0], self.cstime[1])
                 time.sleep(sleep_time)
                 self.state = 0
+                # Make sure every thread got a reply
                 while self.reply_queue:
                     for i in self.reply_queue:
                         if DEBUG:
