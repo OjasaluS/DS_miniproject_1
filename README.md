@@ -1,5 +1,6 @@
 # DS_miniproject_1
 ### This is an implementation of Ricart-Agrawala algorithm in python with sockets.
+Done By Siim-Morten Ojasalu
 ### Python 3 required
 The program is called from the commandline with the command "python3 project1.py n", where n is the amount of threads activated. 
 #### For example:
